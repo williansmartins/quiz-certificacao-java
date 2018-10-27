@@ -1,0 +1,53 @@
+{
+  "name": "apontamentos",
+  "version": "1.0.0",
+  "description": "Apontamento de horas de trabalho",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://bitbucket.org/willians_martins/apontamento/apontamentos.git"
+  },
+  "keywords": [
+    "apontamentos",
+    "horas"
+  ],
+  "author": "Willians Martins de Morais",
+  "license": "ISC",
+  "devDependencies": {
+    "angular": "^1.5.8",
+    "angular-route": "^1.5.8",
+    "browser-sync": "^2.24.6",
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^2.1.0",
+    "gulp-change": "^1.0.0",
+    "gulp-clean": "^0.3.2",
+    "gulp-concat": "^2.4.3",
+    "gulp-cssmin": "^0.1.6",
+    "gulp-file": "^0.3.0",
+    "gulp-imagemin": "^3.1.1",
+    "gulp-jshint": "^1.9.2",
+    "gulp-less": "^3.0.1",
+    "gulp-live-server": "^0.0.29",
+    "gulp-load-plugins": "^0.8.0",
+    "gulp-plumber": "^0.6.6",
+    "gulp-rename": "^1.2.0",
+    "gulp-sftp": "^0.1.5",
+    "gulp-uglify": "^1.1.0",
+    "gulp-util": "^3.0.8",
+    "gulp-zip": "^3.2.0",
+    "jshint-stylish": "^1.0.0",
+    "run-sequence": "^1.2.2"
+  },
+  "bugs": {
+    "url": "https://bitbucket.org/willians_martins/apontamento/apontamentos/issues"
+  },
+  "homepage": "https://bitbucket.org/willians_martins/apontamento/apontamentos#readme",
+  "dependencies": {
+    "eonasdan-bootstrap-datetimepicker": "^4.17.47",
+    "moment": "^2.22.2"
+  }
+}
