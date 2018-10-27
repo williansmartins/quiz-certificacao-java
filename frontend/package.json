@@ -1,5 +1,5 @@
 {
-  "name": "apontamentos",
+  "name": "quiz-certificacao-java",
   "version": "1.0.0",
   "description": "Apontamento de horas de trabalho",
   "main": "index.js",
@@ -8,11 +8,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://bitbucket.org/willians_martins/apontamento/apontamentos.git"
+    "url": "https://github.com/williansmartins/quiz-certificacao-java"
   },
   "keywords": [
-    "apontamentos",
-    "horas"
+    "quiz-certificacao-java",
+    "java"
   ],
   "author": "Willians Martins de Morais",
   "license": "ISC",
@@ -42,10 +42,6 @@
     "jshint-stylish": "^1.0.0",
     "run-sequence": "^1.2.2"
   },
-  "bugs": {
-    "url": "https://bitbucket.org/willians_martins/apontamento/apontamentos/issues"
-  },
-  "homepage": "https://bitbucket.org/willians_martins/apontamento/apontamentos#readme",
   "dependencies": {
     "eonasdan-bootstrap-datetimepicker": "^4.17.47",
     "moment": "^2.22.2"
