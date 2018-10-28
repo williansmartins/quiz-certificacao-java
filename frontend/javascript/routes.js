@@ -13,6 +13,10 @@ angular.module('controlei')
 		templateUrl : "views/home.html",
 		controller: 'HomeController'
 	})
+	.when('/admin', {
+		templateUrl : "views/home_old.html",
+		controller: 'HomeController'
+	})
 	.when('/teste', {
 		templateUrl : "views/teste.html",
 		controller: 'HomeController'
