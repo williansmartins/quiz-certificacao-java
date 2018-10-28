@@ -1,0 +1,128 @@
+body {
+  /*background-color: blue;*/
+}
+body a.disabled {
+  color: #AAAAAA;
+  cursor: default;
+  pointer-events: none;
+  text-decoration: none;
+}
+body.cartaoIndex .resumo-valor {
+  font-size: 25px;
+  color: #6d3aa3;
+}
+body.cartaoIndex #list {
+  /*outline: solid 1px red;*/
+  width: 1200px;
+  margin: 0 auto;
+}
+body.cartaoIndex #list .cartao {
+  border: solid 1px gray;
+  width: 24%;
+  height: 250px;
+  float: left;
+  background-color: white;
+  margin: 0 16px 0 0;
+  margin-bottom: 16px;
+  border-radius: 3px;
+  overflow: hidden;
+}
+body.cartaoIndex #list .cartao:nth-child(4n+4) {
+  margin: 0 0 0 0;
+}
+body.cartaoIndex #list .cartao:last-child {
+  border: dashed 2px gray;
+  text-align: center;
+}
+body.cartaoIndex #list .cartao:last-child .nomeNovoBanco {
+  margin-top: 80px;
+}
+body.cartaoIndex #list .cartao:last-child a {
+  margin-top: 10px;
+}
+body.cartaoIndex #list .cartao:last-child a.novo {
+  margin-top: 100px;
+}
+body.cartaoIndex #list .cartao .linha1 {
+  /*outline: solid 2px red;*/
+  height: 40px;
+  padding-top: 5px;
+}
+body.cartaoIndex #list .cartao .linha1 .banco {
+  /*outline: solid 1px green;*/
+  color: gray;
+  font-size: 15px;
+  font-weight: bold;
+  padding-left: 5px;
+  width: 134px;
+  float: left;
+}
+body.cartaoIndex #list .cartao .linha1 .banco .excluir {
+  width: 20px;
+  height: 20px;
+  margin: 3px 0px 0px 6px;
+  background-image: url("../../img/icon-delete.png");
+  background-repeat: no-repeat;
+  background-size: 21px;
+  text-indent: -9999px;
+  margin: 3px 9px 0 0px;
+  float: left;
+}
+body.cartaoIndex #list .cartao .linha1 .wrapper-novo-valor {
+  float: right;
+}
+body.cartaoIndex #list .cartao .linha1 .wrapper-novo-valor .novo-valor {
+  width: 80px;
+  text-align: center;
+  height: 33px;
+  float: left;
+  /*display: none;*/
+}
+body.cartaoIndex #list .cartao .linha1 .wrapper-novo-valor .adicionar {
+  /*outline: solid 1px green;*/
+  color: green;
+  width: 20px;
+  height: 20px;
+  float: left;
+  margin: 3px 0px 0px 6px;
+  background-image: url("../../img/icon-plus.png");
+  background-size: 21px;
+  text-indent: -9999px;
+  /*display: none; */
+}
+body.cartaoIndex #list .cartao .linha1 .wrapper-novo-valor .adicionar.disabled {
+  background-image: url("../../img/icon-plus-disable.png");
+}
+body.cartaoIndex #list .cartao .valores {
+  /*outline: solid 1px red;*/
+  list-style-type: none;
+  padding-left: 0px;
+}
+body.cartaoIndex #list .cartao .valores .item {
+  text-align: right;
+  /*outline: solid 1px red;*/
+}
+body.cartaoIndex #list .cartao .valores .item:first-child .valor,
+body.cartaoIndex #list .cartao .valores .item:first-child .data {
+  color: blue;
+  font-size: 18px;
+  font-weight: bold;
+}
+body.cartaoIndex #list .cartao .valores .item .valor {
+  color: gray;
+}
+body.cartaoIndex #list .cartao .valores .item .data {
+  color: gray;
+}
+body.cartaoIndex #list .cartao .valores .item .excluir {
+  /*outline: solid 1px pink;*/
+  position: relative;
+  top: 2px;
+  /*display: none;*/
+}
+body.cartaoIndex #list .cartao .valores .item .excluir img {
+  width: 15px;
+  height: 15px;
+  vertical-align: initial;
+  margin-top: 4px;
+}
