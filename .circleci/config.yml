@@ -53,7 +53,12 @@ jobs:
 
       - run:
           name: ssh-keyscan
-          command: ssh-keyscan -H pwms.com.br >> ~/.ssh/known_hosts   
+          command: ssh-keyscan -H pwms.com.br >> ~/.ssh/known_hosts  
+
+      - run: 
+          name: ver known_hosts
+          command: |
+            cat ~/.ssh/known_hosts             
 
       - run:
           name: Deploy Over SSH
