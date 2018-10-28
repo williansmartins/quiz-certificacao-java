@@ -5,6 +5,35 @@ angular.module('principal')
     $scope.$storage = $localStorage;
     $scope.questaoSelecionada = "";
     $scope.alternativas = Object();
+    $scope.contador = 0;
+
+    $scope.next = function(){
+    	if($scope.contador<$scope.questoes.length-1){
+	    	$scope.contador += 1;
+	    	selecionarQuestao()
+    	}
+    }
+
+    $scope.prev = function(){
+    	if($scope.contador>=1){
+	    	$scope.contador -= 1;
+	    	selecionarQuestao()
+	    }
+    }
+
+    var selecionarQuestao = function(){
+    	$scope.questaoSelecionada = $scope.questoes[$scope.contador].descricao;
+        $scope.alternativas[0] = $scope.questoes[$scope.contador].resposta1;
+        $scope.alternativas[1] = $scope.questoes[$scope.contador].resposta2;
+        $scope.alternativas[2] = $scope.questoes[$scope.contador].resposta3;
+        $scope.alternativas[3] = $scope.questoes[$scope.contador].resposta4;
+        $scope.alternativas[4] = $scope.questoes[$scope.contador].resposta5;
+
+        $scope.titulo = $scope.questoes[$scope.contador].titulo;
+
+        setTimeout(removerPrettyPrint, 1000);
+		setTimeout(aplicarPrettyPrint, 2000);
+    }
 
     $scope.codificar = function(){
     	var questaoCodificada = htmlentities.encode($("textarea").val());
@@ -26,19 +55,9 @@ angular.module('principal')
         QuestoesService.buscarQuestoes()
         .success(function(response, status){
             console.info(response);
-            var questoes = response.questoes;
+            $scope.questoes = response.questoes;
 
-            $scope.questaoSelecionada = questoes[0].descricao;
-            $scope.alternativas[0] = questoes[0].resposta1;
-            $scope.alternativas[1] = questoes[0].resposta2;
-            $scope.alternativas[2] = questoes[0].resposta3;
-            $scope.alternativas[3] = questoes[0].resposta4;
-            $scope.alternativas[4] = questoes[0].resposta5;
-
-            $scope.titulo = questoes[0].titulo;
-
-            setTimeout(removerPrettyPrint, 1000);
-    		setTimeout(aplicarPrettyPrint, 2000);
+            selecionarQuestao();
         })
         .error(function(response){
             alert("Erro!");
@@ -46,9 +65,6 @@ angular.module('principal')
     }
 
     init = function() {
-    	//buscarApontamentosDoDia();
-    	//buscarTodosApontamentos();
-        //alert(new Date("2018-08-27 14:32:31".replace(' ', 'T')));
         buscarQuestoes();
     };
 
