@@ -8,34 +8,46 @@ jobs:
     docker:
       # specify the version you desire here
       - image: circleci/node:8.9
-
+      
     working_directory: ~/projeto
-    
+
     steps:
       - run: 
           name: ls
           command: |
-            ls -lia
+            ls -lia /home/circleci/projeto/app
 
-      - run:
-        - persist_to_workspace:
-              root: /home/circleci/projeto
-              paths:
-                - app/dist/
+      - persist_to_workspace:
+          root: /home/circleci/projeto
+          paths:
+            - app/dist/
+
   deploy:
     docker:
+      # specify the version you desire here
       - image: circleci/node:8.9
       
     working_directory: ~/projeto
 
     steps:
+
       - attach_workspace:
           at: tmp/
-          
+      
       - run: 
           name: ls
           command: |
             ls -lia
+
+      - run: 
+          name: ls
+          command: |
+            ls -lia tmp
+
+      - run: 
+          name: ls
+          command: |
+            ls -lia tmp/app/dist
 
       - run: 
           name: ssh-keygen 
@@ -46,10 +58,10 @@ jobs:
           name: ssh-keyscan
           command: ssh-keyscan -H pwms.com.br >> ~/.ssh/known_hosts   
 
-      # - run:
-      #     name: Deploy Over SSH
-      #     command: |
-      #       scp -r tmp/app/dist/ $SSH_USER@$SSH_HOST:\$HOME/pwms.com.br/apps/quiz/
+      - run:
+          name: Deploy Over SSH
+          command: |
+            scp -r tmp/app/dist/ $SSH_USER@$SSH_HOST:\$HOME/pwms.com.br/apps/quiz/
 
 workflows:
   version: 2
