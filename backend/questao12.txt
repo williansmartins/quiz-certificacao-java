@@ -1,0 +1,26 @@
+Fill in the blank with correct option to complete the program code.
+
+ 
+
+                interface CanFly{
+
+                                String type = "A";
+
+                                void fly();
+
+                               
+
+                                _____  String getType(){
+
+                                                return type;
+
+                                }
+
+}
+
+Please select :
+A. abstract
+B. public
+C. default
+D. Interfaces cannot have non-abstract methods.
+E. No need to fill anything in the blank.

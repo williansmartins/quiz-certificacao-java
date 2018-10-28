@@ -1,0 +1,15 @@
+Choose the correct options to complete the following program code.
+
+(Select 2 options.)
+
+       public void method() _____ Exception {
+                    _____________ Exception();
+       }
+ 
+
+Please select :
+A. Fill throws in Line 1
+B. Fill throws new in Line 1
+C. Fill throw new in Line 2
+D. Fill throws in Line 2
+E. Fill throws new in Line 2

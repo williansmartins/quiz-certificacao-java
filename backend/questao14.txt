@@ -1,0 +1,18 @@
+Which of the following data types will allow the following code snippet to compile? 
+
+float i = 4;
+
+float j = 2;
+
+_____ z = i + j;
+
+(Select 2 options.)
+
+ 
+
+Please select :
+A. long
+B. double
+C. int
+D. float
+E. byte

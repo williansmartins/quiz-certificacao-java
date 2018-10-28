@@ -1,0 +1,10 @@
+Which exception will the following statement generate? 
+
+int array[] = new int[-2];
+
+Please select :
+A. NullPointerException
+B. NegativeArraySizeException
+C. ArrayIndexOutOfBoundsException
+D. IndexOutOfBoundsException
+E. The statement executes without any exception.

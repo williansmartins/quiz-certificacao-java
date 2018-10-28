@@ -1,0 +1,23 @@
+What will be the output of this program code?
+
+public class Whizlabs{
+               
+                public static void main(String[] args){
+                                try{
+                                                Double number = Double.valueOf("120D");      
+                                }catch(NumberFormatException ex){    
+                                              System.out.println(ex); 
+                                               }        
+                               System.out.println(number);   
+                }
+}
+ 
+
+ 
+
+Please select :
+A. 120
+B. 120D
+C. Run-time exception NumberFormatException is generated.
+D. Compilation fails due to an error at line 5.
+E. Compilation fails due to an error at line 9.

@@ -1,0 +1,22 @@
+Complete the code below by choosing the correct option to fill in the blank. 
+
+                public class Exam {
+
+                                void method() { }
+
+}
+
+ 
+
+public class OCAJP extends Exam{
+
+ _____ void method() { }
+
+}
+
+Please select :
+A. abstract
+B. final
+C. private
+D. default
+E. int

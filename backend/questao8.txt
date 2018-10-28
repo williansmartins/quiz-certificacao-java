@@ -1,0 +1,30 @@
+What will be the output of the following program?
+
+
+
+     public class Whizlabs {
+                public static void main(String[] args) {
+                                String s = "A";
+ 
+                                switch (s) {
+                                case "a":
+                                                System.out.print("simple A ");
+                                default:
+                                                System.out.print("default ");
+                                case "A":
+                                                System.out.print("Capital A ");
+                                }
+                }
+}
+ 
+
+ 
+
+ 
+
+Please select :
+A. simple A
+B. Capital A
+C. simple A default Capital A
+D. simple A default
+E. Compilation fails.

@@ -1,0 +1,8 @@
+Which of the following is valid for compiling java source file with the name "Main"?
+
+Please select :
+A. javac Main.java
+B. java Main.class
+C. java Main.java
+D. javac Main
+E. java Main

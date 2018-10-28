@@ -1,0 +1,7 @@
+Assume, you have a method which is declared to take four arguments. What will happen if a given program call this method with only 2 Arguments, instead of four Arguments?
+
+Please select :
+A. Code compiles successfully. However, in Runtime throws exception.
+B. Compilation Fails
+C. Both 3rd & 4th Argument is given a value zero.
+D. Both 3rd & 4th Argument is given a value null.

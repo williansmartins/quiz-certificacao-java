@@ -1,0 +1,14 @@
+Which statement is true regarding this method?
+
+                default void print(){
+
+                                                     }
+
+ 
+
+Please select :
+A. This method is invalid.
+B. This method can be used only in an interface.
+C. This method can return anything.
+D. This method can be used only in an interface or an abstract class.
+E. None of the above.

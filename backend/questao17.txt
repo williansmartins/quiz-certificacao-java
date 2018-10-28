@@ -1,0 +1,14 @@
+Which statement is/are true?
+
+I.            Default constructor contains “super();” call .
+
+II.           We can’t use any access modifier with a constructor.
+
+III.          A constructor does not have a return type.
+
+Please select :
+A. Only I.
+B. Only II.
+C. Only I and II.
+D. Only I and III.
+E. All.

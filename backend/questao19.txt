@@ -1,0 +1,19 @@
+What will be the output of following program code?
+
+public class Whizlabs{
+                public static void main(String[] args){
+                                StringBuilder sb = new StringBuilder("1Z0");
+                                sb.concat("-808");
+                                System.out.println(sb);
+                }
+}             
+ 
+
+ 
+
+Please select :
+A. 1Z0
+B. 1Z0-808
+C. Run-time exception.
+D. Compilation fails due to an error at line 3.
+E. Compilation fails due to error at line 4.

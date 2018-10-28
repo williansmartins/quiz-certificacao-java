@@ -1,0 +1,22 @@
+What will be the output of following program code?
+
+import java.io.*;
+public class Whizlabs{
+
+            public static void main(String args[]){
+                     try{
+                                 int whizData[] = new int[10];
+                                System.out.println("Accessing Element Eleven :" + whizData[11]);
+                     }catch(ArrayIndexOutOfBoundsException e){
+                                System.out.println("Oops.. Identifed Exception :: " + e);
+                     }
+            }
+}
+
+ 
+
+Please select :
+A. Compilation Fails.
+B. Oops.. Identifed Exception :: java.lang.ArrayIndexOutOfBoundsException: 11
+C. Accessing Element Eleven : 0
+D. Oops.. Identified Exception :: java.lang.NoDataFoundException.

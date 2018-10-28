@@ -1,0 +1,9 @@
+Which of followings are the features of multiple classes?
+
+(Select two options.)
+
+Please select :
+A. Refactoring
+B. Inheritance
+C. Remote Method Invocation
+D. Composition
