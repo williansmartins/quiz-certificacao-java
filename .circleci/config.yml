@@ -12,6 +12,8 @@ jobs:
     working_directory: ~/projeto
 
     steps:
+      - checkout
+
       - run: 
           name: ls
           command: |
