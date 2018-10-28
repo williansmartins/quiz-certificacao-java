@@ -1,0 +1,102 @@
+# Javascript Node CircleCI 2.0 configuration file
+#
+# Check https://circleci.com/docs/2.0/language-javascript/ for more details
+#
+version: 2
+jobs:
+  build:
+    docker:
+      # specify the version you desire here
+      - image: circleci/node:8.9
+      
+    working_directory: ~/
+
+    steps:
+      - checkout
+
+
+      # Restore local dependencies from cache 
+      - restore_cache:  
+          keys: 
+          - v1-dependencies-{{ checksum "app/package.json" }} 
+          - v1-dependencies-  
+
+      # Install project dependencies  
+      - run:  
+          name: Install local dependencies  
+          command: cd app && npm install  
+      - run:  
+          name: install angular CLI 
+          command: sudo npm install -g @angular/cli 
+
+       # Cache local dependencies if they don't exist 
+      - save_cache: 
+          key: v1-dependencies-{{ checksum "app/package.json" }}  
+          paths:  
+              - node_modules  
+      - run: 
+          name: build angular 
+          command: cd app && ng build            
+
+      - run: 
+          name: ls
+          command: |
+            ls -lia /home/circleci/projeto/app
+
+      - persist_to_workspace:
+          root: /home/circleci/projeto
+          paths:
+            - app/dist/
+
+  deploy:
+    docker:
+      # specify the version you desire here
+      - image: circleci/node:8.9
+      
+    working_directory: ~/projeto
+
+    steps:
+
+      - attach_workspace:
+          at: tmp/
+      
+      - run: 
+          name: ls
+          command: |
+            ls -lia
+
+      - run: 
+          name: ls
+          command: |
+            ls -lia tmp
+
+      - run: 
+          name: ls
+          command: |
+            ls -lia tmp/app/dist
+
+      - run: 
+          name: ssh-keygen 
+          command: |
+            ssh-keygen -t rsa -N "" -f ~/.ssh/id_rsa
+
+      - run:
+          name: ssh-keyscan
+          command: ssh-keyscan -H pwms.com.br >> ~/.ssh/known_hosts   
+
+      - run:
+          name: Deploy Over SSH
+          command: |
+            scp -r tmp/app/dist/ $SSH_USER@$SSH_HOST:\$HOME/pwms.com.br/apps/angular/
+
+workflows:
+  version: 2
+  build-and-deploy:
+    jobs:
+      - build
+      - deploy:
+          requires:
+            - build
+          filters:
+            branches:
+              only: master            
