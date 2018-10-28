@@ -15,7 +15,7 @@ jobs:
       - run: 
           name: ls
           command: |
-            ls -lia /home/circleci/projeto/app
+            ls -lia /home/circleci/projeto
 
       - persist_to_workspace:
           root: /home/circleci/projeto
