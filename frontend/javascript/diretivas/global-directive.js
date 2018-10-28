@@ -1,4 +1,4 @@
-angular.module('controlei')
+angular.module('principal')
 
 .directive('back', ['$window', function($window) {
     return {
@@ -12,7 +12,7 @@ angular.module('controlei')
     };
 }]);
 
-angular.module('controlei')
+angular.module('principal')
 .directive('loading', ['$http' ,function ($http) {
     return {
         restrict: 'A',
@@ -35,7 +35,7 @@ angular.module('controlei')
 
 }]);
 
-angular.module('controlei')
+angular.module('principal')
 .directive('validate', [function ($http) {
     return {
         restrict: 'A',

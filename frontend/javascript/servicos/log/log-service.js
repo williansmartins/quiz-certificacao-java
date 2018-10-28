@@ -1,5 +1,5 @@
 angular
-.module('controlei')
+.module('principal')
 .factory('LogService', LogService);
 
 function LogService ($log) {

@@ -1,4 +1,4 @@
-angular.module('controlei')
+angular.module('principal')
 .factory('ComponentModal', [ '$document',
     function ComponentModal($document) {
         var pathModais = 'views/modais/';

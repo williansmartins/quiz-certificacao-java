@@ -1,4 +1,4 @@
-angular.module('controlei') 
+angular.module('principal') 
 .config(function($routeProvider) {
 	
 	$routeProvider.when('/', {
@@ -14,8 +14,8 @@ angular.module('controlei')
 		controller: 'HomeController'
 	})
 	.when('/admin', {
-		templateUrl : "views/home_old.html",
-		controller: 'HomeController'
+		templateUrl : "views/admin.html",
+		controller: 'AdminController'
 	})
 	.when('/teste', {
 		templateUrl : "views/teste.html",

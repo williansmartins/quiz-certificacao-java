@@ -1,4 +1,4 @@
-angular.module('controlei')
+angular.module('principal')
 .controller('ModalDefaultController', function ($uibModalInstance, items, SessionService) {
     var $ctrl = this;
     $ctrl.items = items;

@@ -1,5 +1,5 @@
 angular
-.module('controlei')
+.module('principal')
 .factory('LoginService', LoginService);
 
 function LoginService ($q, $window, $http) {

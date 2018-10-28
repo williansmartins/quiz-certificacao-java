@@ -1,17 +1,20 @@
 angular.module('principal')
-.controller('HomeController', ['$scope', '$uibModal', '$log', '$document', '$location', '$window', '$filter', 'QuestoesService', '$rootScope', '$localStorage','$rootScope', 
+.controller('AdminController', ['$scope', '$uibModal', '$log', '$document', '$location', '$window', '$filter', 'QuestoesService', '$rootScope', '$localStorage','$rootScope', 
 	function ($scope, $uibModal, $log, $document, $location, $window, $filter, QuestoesService, $rootScope, $localStorage, $rootScope) {
 
     $scope.$storage = $localStorage;
-    $scope.questaoSelecionada = "";
     $scope.alternativas = Object();
+    $scope.questoes = Object();
+    $scope.questaoSelecionada = {
+    	"descricao":""
+    };
 
     $scope.codificar = function(){
-    	var questaoCodificada = htmlentities.encode($("textarea").val());
-    	$scope.questaoSelecionada = questaoCodificada;
+    	var valor = htmlentities.encode($("textarea").val());
+    	$scope.questaoSelecionada.descricao = valor;
 
-    	setTimeout(removerPrettyPrint, 1000);
-    	setTimeout(aplicarPrettyPrint, 1000);
+    	// setTimeout(removerPrettyPrint, 1000);
+    	// setTimeout(aplicarPrettyPrint, 1000);
     }
 
     var removerPrettyPrint = function(){
@@ -22,23 +25,42 @@ angular.module('principal')
     	PR.prettyPrint();
     }
 
+    $scope.salvar = function(){
+    	QuestoesService.salvar($scope.questaoSelecionada)
+        .success(function(response, status){
+            console.info(response);
+            buscarQuestoes();
+        })
+        .error(function(response){
+            alert("Erro!");
+        });
+    }
+
+    $scope.remover = function(id){
+    	QuestoesService.remover(id)
+        .success(function(response, status){
+            console.info(response);
+        })
+        .error(function(response){
+            alert("Erro!");
+        });
+    }
+
     var buscarQuestoes = function(){
         QuestoesService.buscarQuestoes()
         .success(function(response, status){
             console.info(response);
-            var questoes = response.questoes;
+            $scope.questoes = response.questoes;
 
-            $scope.questaoSelecionada = questoes[0].descricao;
-            $scope.alternativas[0] = questoes[0].resposta1;
-            $scope.alternativas[1] = questoes[0].resposta2;
-            $scope.alternativas[2] = questoes[0].resposta3;
-            $scope.alternativas[3] = questoes[0].resposta4;
-            $scope.alternativas[4] = questoes[0].resposta5;
+      //       $scope.questaoSelecionada = questoes[0];
+      //       $scope.alternativas[0] = $scope.questaoSelecionada.resposta1;
+      //       $scope.alternativas[1] = $scope.questaoSelecionada.resposta2;
+      //       $scope.alternativas[2] = $scope.questaoSelecionada.resposta3;
+      //       $scope.alternativas[3] = $scope.questaoSelecionada.resposta4;
+      //       $scope.alternativas[4] = $scope.questaoSelecionada.resposta5;
 
-            $scope.titulo = questoes[0].titulo;
-
-            setTimeout(removerPrettyPrint, 1000);
-    		setTimeout(aplicarPrettyPrint, 2000);
+      //       setTimeout(removerPrettyPrint, 1000);
+    		// setTimeout(aplicarPrettyPrint, 2000);
         })
         .error(function(response){
             alert("Erro!");
@@ -46,9 +68,6 @@ angular.module('principal')
     }
 
     init = function() {
-    	//buscarApontamentosDoDia();
-    	//buscarTodosApontamentos();
-        //alert(new Date("2018-08-27 14:32:31".replace(' ', 'T')));
         buscarQuestoes();
     };
 

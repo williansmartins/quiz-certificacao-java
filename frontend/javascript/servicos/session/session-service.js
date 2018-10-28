@@ -1,4 +1,4 @@
-angular.module('controlei')
+angular.module('principal')
 .factory('SessionService', [ '$window', '$location',
     function SessionService($window, $location) {
 

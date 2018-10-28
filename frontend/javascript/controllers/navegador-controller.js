@@ -1,4 +1,4 @@
-angular.module('controlei')
+angular.module('principal')
 .controller('NavegadorController', 
     function ($scope, $uibModal, $log, $document, $location, $window, $filter, LoginService, $localStorage, LogService, SessionService, ComponentModal, $rootScope) {
 

@@ -1,4 +1,4 @@
-angular.module('controlei')
+angular.module('principal')
 .config(function($httpProvider, $base64, $provide) {
 	
 	$provide.factory('MyHttpInterceptor', function($q, $location, $localStorage, $injector, ComponentModal) {

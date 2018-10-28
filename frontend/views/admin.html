@@ -1,0 +1,79 @@
+<div id="admin" class="container">
+	<h1 class="titulo">Questions</h1>
+	<div class="row">
+		<label>Formated</label>
+		<pre ng-bind-html=" questaoSelecionada.descricao | trusted" class="prettyprint linenums lang-java"></pre>
+	</div>
+
+	<div class="row">
+		<label>id:</label>
+		<input ng-model="questaoSelecionada.id"></input>
+		<label>Encoding:</label>
+		<input ng-model="questaoSelecionada.descricao"></input>
+	</div>	
+
+	<div class="row">
+		<label>Paste code here:</label>
+		<br>
+		<textarea ng-keydown="codificar()"></textarea>
+	</div>
+
+	<div class="row">
+		<label>Title:</label>
+		<input class="title" ng-model="questaoSelecionada.titulo"></input>
+		<br />
+
+		<label>Alternatives:</label>
+		<br />
+		
+		<label>alternative 1:</label>
+		<input class="alternative" ng-model="questaoSelecionada.resposta1"></input>
+		<br />
+		
+		<label>alternative 2:</label>
+		<input class="alternative" ng-model="questaoSelecionada.resposta2"></input>
+		<br />
+		
+		<label>alternative 3:</label>
+		<input class="alternative" ng-model="questaoSelecionada.resposta3"></input>
+		<br />
+		
+		<label>alternative 4:</label>
+		<input class="alternative" ng-model="questaoSelecionada.resposta4"></input>
+		<br />
+		
+		<label>alternative 5:</label>
+		<input class="alternative" ng-model="questaoSelecionada.resposta5"></input>
+		<br />
+
+		<label>right alternative:</label>
+		<input class="alternative" ng-model="questaoSelecionada.correta"></input>
+			
+	</div>
+
+	<button ng-click="codificar()" class="btn btn-info">Gerar</button>
+	<button ng-click="salvar()" class="btn btn-success">Salvar</button>
+
+	<h4>Questions:</h4>
+
+	<table class="table">
+	  <thead class="thead-light">
+	    <tr>
+	      <th scope="col">#</th>
+	      <th scope="col">Title</th>
+	      <th scope="col">Right</th>
+	      <th scope="col">Actions</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr ng-repeat="(key, value) in questoes">
+	      <th scope="row">{{value.id}}</th>
+	      <td>{{value.titulo}}</td>
+	      <td>{{value.respostaCorreta}}</td>
+	      <td><button class="btn btn-danger" ng-click="remover(value.id)">remove</button></td>
+	    </tr>
+	    <tr>
+	  </tbody>
+	</table>
+
+</div>

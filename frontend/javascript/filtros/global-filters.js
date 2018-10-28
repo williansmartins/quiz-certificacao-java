@@ -1,4 +1,4 @@
-angular.module('controlei')
+angular.module('principal')
 .filter('myDateFormat', function myDateFormat($filter){
   return function(text){
   	console.info(text);
@@ -7,7 +7,7 @@ angular.module('controlei')
   }
 });
 
-angular.module('controlei')
+angular.module('principal')
 .filter('toArray', function () {
   return function (obj, addKey) {
     if (!angular.isObject(obj)) return obj;
@@ -26,7 +26,7 @@ angular.module('controlei')
   };
 });
 
-angular.module('controlei')
+angular.module('principal')
 .filter('trusted', ['$sce', function($sce) {
     var div = document.createElement('div');
     return function(text) {

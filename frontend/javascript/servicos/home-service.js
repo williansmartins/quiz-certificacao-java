@@ -1,8 +1,8 @@
 angular
-.module('controlei')
-.factory('HomeService', HomeService);
+.module('principal')
+.factory('QuestoesService', QuestoesService);
 
-function HomeService ($q, $window, $http) {
+function QuestoesService ($q, $window, $http) {
     return {
 
         buscarQuestoes: function(){
@@ -12,17 +12,22 @@ function HomeService ($q, $window, $http) {
             })
         },
 
-        apontar : function () {
+        salvar : function (questao) {
             var dataAtual = new Date();
             var dataFormatada = dataAtual.format("YYYY-MM-DD HH:m:s");
 
             return $http({
                 method : "POST",
-                url : barramento + "/generic/apontamento",
+                url : barramento + "/generic/questoes",
                 data: {
-                    "created_at": dataFormatada,
-                    "ponto": dataFormatada,
-                    "descricao": "natural",
+					"titulo" : questao.titulo,
+					"descricao" : questao.descricao,
+					"resposta1" : questao.resposta1,
+					"resposta2" : questao.resposta2,
+					"resposta3" : questao.resposta3,
+					"resposta4" : questao.resposta4,
+					"resposta5" : questao.resposta5,
+					"respostaCorreta" : questao.correta
                 }
             })
         },
@@ -41,10 +46,10 @@ function HomeService ($q, $window, $http) {
             })
         },
 
-        deletar : function (id) {
+        remover : function (id) {
             return $http({
                 method : "DELETE",
-                url : barramento + "/generic/apontamento/"+id
+                url : barramento + "/generic/questoes/"+id
             })
         },
 
