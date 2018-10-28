@@ -47,11 +47,6 @@ jobs:
             ls -lia tmp
 
       - run: 
-          name: ls
-          command: |
-            ls -lia tmp/app/dist
-
-      - run: 
           name: ssh-keygen 
           command: |
             ssh-keygen -t rsa -N "" -f ~/.ssh/id_rsa
@@ -63,7 +58,7 @@ jobs:
       - run:
           name: Deploy Over SSH
           command: |
-            scp -r tmp/app/dist/ $SSH_USER@$SSH_HOST:\$HOME/pwms.com.br/apps/quiz/
+            scp -r tmp/frontend/ $SSH_USER@$SSH_HOST:\$HOME/pwms.com.br/apps/quiz/
 
 workflows:
   version: 2
