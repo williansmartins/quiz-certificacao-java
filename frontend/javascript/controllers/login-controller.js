@@ -55,7 +55,7 @@ angular.module('principal')
 
             //TODO: nao era pra ser assim, erro de login tinha que cair em error...
             if(response.status=="error"){
-                apresentarMensagem("Houve um problema ao tentar fazer o login.");
+               alert("Houve um problema ao tentar fazer o login");
             }else{
                 $scope.nome = response.user.name;
                 $scope.tipo = response.user.tipo;
@@ -79,7 +79,7 @@ angular.module('principal')
         .error(function(response){
             $scope.$storage.usuarioLogado = false;
             $scope.temErro = true;
-            apresentarMensagem("Houve um problema ao tentar fazer o login.");
+            alert("Houve um problema ao tentar fazer o login");
         });
     }
 
