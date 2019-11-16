@@ -63,7 +63,7 @@ jobs:
       - run:
           name: Deploy Over SSH
           command: |
-            scp -r tmp/frontend/* $SSH_USER@$SSH_HOST:\$HOME/pwms.com.br/apps/quiz/
+            scp -r tmp/frontend/* $SSH_USER@$SSH_HOST:\$HOME/web/pwms.com.br/apps/quiz/
 
 workflows:
   version: 2
