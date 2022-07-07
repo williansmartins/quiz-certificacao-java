@@ -44,6 +44,6 @@
   },
   "dependencies": {
     "eonasdan-bootstrap-datetimepicker": "^4.17.47",
-    "moment": "^2.22.2"
+    "moment": "^2.29.4"
   }
 }
