@@ -19,7 +19,7 @@
   "devDependencies": {
     "angular": "^1.5.8",
     "angular-route": "^1.5.8",
-    "browser-sync": "^2.24.6",
+    "browser-sync": "^2.29.1",
     "del": "^2.2.2",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^2.1.0",
@@ -31,7 +31,7 @@
     "gulp-imagemin": "^3.1.1",
     "gulp-jshint": "^1.9.2",
     "gulp-less": "^3.0.1",
-    "gulp-live-server": "^0.0.29",
+    "gulp-live-server": "^0.0.31",
     "gulp-load-plugins": "^0.8.0",
     "gulp-plumber": "^0.6.6",
     "gulp-rename": "^1.2.0",
